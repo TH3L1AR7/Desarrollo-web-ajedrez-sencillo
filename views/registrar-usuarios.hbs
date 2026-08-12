@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styleregister.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Registrarse</title>
+</head>
+<body>
+  <div>
+    <a href="/principal" class="boton-menu" id="menu-register">Atrás</a>
+  </div>
+  <form id="registro-form">
+    <div class="informacion">
+      <label for="Nombre-registro">Nombre</label>
+      <input type="text" name="Nombre" id="Nombre-registro" placeholder="Nombre" required><br>
+
+      <label for="Apellido-registro">Apellido</label>
+      <input type="text" name="Apellido" id="Apellido-registro" placeholder="Apellido" required><br>
+
+      <label for="Correo">Correo</label>
+      <input type="email" name="Correo" id="Correo" placeholder="Correo" required><br>
+
+      <label for="Contraseña">Contraseña</label>
+      <input type="password" name="Contraseña" id="Contraseña" placeholder="Contraseña" required><br>
+
+      <label for="Confirmar-Contraseña">Confirmar Contraseña</label>
+      <input type="password" name="Confirmar-Contraseña" id="Confirmar-Contraseña" placeholder="Confirmar Contraseña" required><br>
+
+      <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+      <input type="date" name="fecha-nacimiento" id="fecha-nacimiento" required><br>
+
+      <button id="registrarse" type="submit">Registrarse</button>
+    </div>
+  </form>
+
+  <div id="mensaje"></div>
+
+  <script src="/js/registro.js"></script>
+
+</body>
+</html>

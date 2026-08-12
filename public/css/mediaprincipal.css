@@ -1,0 +1,130 @@
+
+
+@media (width >= 1025px) and (width <= 1745px) {
+  .principal {
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  .boton-registro {
+    left: 160%;
+    top: 10%;
+  }
+
+  .boton-inicio-sesion {
+    left: 100%;
+    top: 10%;
+  }
+
+  .login-en-principal {
+    top: 10%;
+    left: -110%;
+  }
+
+  #subtexto {
+    bottom: 10%;
+    left: -110%;
+  }
+}
+
+@media (width <= 1024px) {
+  .principal {
+    transform: scale(1.1);
+    transform-origin: center;
+  }
+
+  .boton-registro {
+    top: 13%;
+    left: 92%;
+  }
+
+  .boton-inicio-sesion {
+    top: 13%;
+    left: 33%;
+  }
+
+  .login-en-principal {
+    top: 13%;
+    left: -45%;
+  }
+
+  #subtexto {
+    bottom: 20%;
+    left: -48%;
+  }
+}
+
+@media (width <= 767px) {
+  .principal {
+    transform: scale(0.9);
+    transform-origin: center;
+  }
+
+  #menu {
+    width: 300px;
+    margin: 240px auto;
+    transform: scale(1.2);
+  }
+
+  .boton-registro {
+    top: 5%;
+    left: 105%;
+    transform: scale(1.2);
+  }
+
+  .boton-inicio-sesion {
+    top: 5%;
+    left: 35%;
+    transform: scale(1.2);
+  }
+
+  .login-en-principal {
+    top: 4%;
+    left: -65%;
+  }
+
+  #subtexto {
+    bottom: 19%;
+    left: -59%;
+  }
+}
+
+@media (width <= 480px) {
+  .principal {
+    transform: scale(0.6);
+    transform-origin: center;
+  }
+
+    #menu {
+        width: 300px;
+        margin: 240px auto;
+        transform: scale(1.4);
+    }
+
+  .boton-registro {
+    top: -18%;
+    left: 100%;
+    font-size: 16px; 
+    width: 140px;
+    height: 45px;
+  }
+
+  .boton-inicio-sesion {
+    top: -18%;
+    left: 30%;
+    font-size: 16px;
+    width: 140px;
+    height: 45px;
+  }
+
+        .login-en-principal {
+        top: -18%;
+        left: -55%;
+    }
+
+  #subtexto {
+    bottom: 18%;
+    left: -55%;
+    font-size: 14px;
+  }
+}

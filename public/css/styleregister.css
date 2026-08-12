@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+    font-family: Monaco, monospace;
+    background-image: url("/img/Fondo/images.jpeg"); 
+  }
+  
+  .informacion {
+    background-color: #D2A679;
+    padding: 20px;
+    width: 400px;
+    height: 600px; 
+    border-radius: 8px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    animation: slideIn 2s ease-out;
+  }
+
+  input {
+    width: 100%; 
+    padding: 12px; 
+    font-size: 16px; 
+    border-radius: 100px; 
+    margin-bottom: 15px; 
+    outline: none; 
+    background-color: aliceblue;
+  }
+
+  #registrarse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    padding: 5px 20px;
+    background-color: #03C082; 
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+#menu-register{
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+
+.inicio-sesion {
+  background-color: #D2A679;
+  padding: 20px;
+  width: 400px; 
+  border-radius: 10px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  animation: slideIn 2.5s ease-out;
+}
+#Registarse-en-iniciosesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      width: 120px;
+height: 35px;
+    font-size: 18px;
+    padding: 5px 20px;
+    background-color: #03C082;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    left: 100px;
+top: -49px;
+  border: 2px solid black;
+}
+#iniciar-sesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    padding: 5px 20px;
+    background-color: #03C082;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    left: -100px;
+      border: 2px solid black;
+
+}
+
+@keyframes slide-in {
+  0% {
+      transform: translateX(-100%);
+  }
+
+  100% {
+      transform: translateX(0);
+  }
+}
+
+
+
+
+
+@media(width <= 1024px){
+  .informacion {
+position: static;
+  }
+}
+
+
+@media(width <= 1024px){
+.inicio-sesion {
+  position: static;
+  transform: scale(1.1);
+}
+}

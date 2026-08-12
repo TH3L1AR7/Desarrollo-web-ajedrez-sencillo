@@ -1,0 +1,107 @@
+body {
+    font-family: Monaco, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    margin: 0;
+    background-image: url("/img/Fondo/images.jpeg");
+}
+
+.container {
+    text-align: center;
+    background-color: #F5DEB3;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+    width: 500px;
+    height: fit-content;
+    color: black;
+    border: 3px solid black;
+    animation: fadeIn 2s ease-out   ;
+
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.boton-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 100px;
+    padding: 5px 20px;
+    background-color: #D2A679; 
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    border: 3px solid black;
+    margin: auto;
+    font-size: 25px;
+}
+
+.boton-link:hover {
+    background-color: white;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.boton-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    padding: 5px 20px;
+    background-color: #F5EADC; 
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 10px;   
+    left: 30px;  
+    animation: slideIn 2s ease-out;
+    border: 3px solid black;
+
+
+}
+
+.boton-menu:hover {
+    background-color: white;
+}

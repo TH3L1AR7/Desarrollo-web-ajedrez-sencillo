@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>Partida online</title>
+
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+  <a href="/principal" class="boton-menu">Menú</a>
+
+  <h2 id="turnoLabel">Cargando turno…</h2>
+
+  <div class="tablero-con-laterales">
+    <div class="tablero"></div>
+  </div>
+
+  <script src="/js/tablero-online.js"></script>
+
+  <script>
+    const partidaId = "{{partidaId}}";
+    const usuarioId = "{{usuarioId}}";
+
+    // 1) Cargar estado inicial
+    fetch(`/api/partidas/${partidaId}/estado`)
+      .then(r => r.json())
+      .then(d => {
+        TableroOnline.pintarTablero(d);
+        actualizarTurno(d);
+      });
+
+    // 2) Enviar movimiento
+    TableroOnline.onMovimiento(async (from, to) => {
+      const res = await fetch(`/api/partidas/${partidaId}/mover`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ from, to })
+      });
+      const data = await res.json();
+      if (res.ok) {
+        TableroOnline.pintarTablero(data);
+        actualizarTurno(data);
+      } else {
+        alert(data.error);
+      }
+    });
+
+    // 3) Refrescar cada 5 s si NO es mi turno
+    setInterval(async () => {
+      const r = await fetch(`/api/partidas/${partidaId}/estado`);
+      const d = await r.json();
+      TableroOnline.pintarTablero(d);
+      actualizarTurno(d);
+    }, 5000);
+
+    function actualizarTurno(d) {
+      const miBlancas = d.jugador1 === usuarioId;
+      const esMiTurno = (d.turno === 'blancas' && miBlancas) ||
+                        (d.turno === 'negras'  && !miBlancas);
+      document.getElementById('turnoLabel').textContent =
+        esMiTurno ? 'TU TURNO' : 'Turno rival';
+      TableroOnline.bloquearMovimientos(!esMiTurno);
+    }
+  </script>
+</body>
+</html>

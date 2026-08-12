@@ -1,0 +1,31 @@
+
+
+@media (width >= 1025px) and (width <= 1745px) {
+#seccion {
+    position: relative;
+    top: auto;
+    left: 18%;
+    font-size: 35px;
+}
+}
+
+@media (width <= 1024px) {
+  #seccion {
+    position: relative;
+    top: auto;
+    left: 18%;
+    font-size: 35px;
+}
+
+.dev {
+    font-size: 24px;
+    font-weight: 700;
+}
+}
+
+@media (width <= 480px) {
+    .contenedor {
+    width: 87%;
+    top: 200px;
+}
+}

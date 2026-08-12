@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis Partidas</title>
+  <link rel="stylesheet" href="/css/partidas.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a href="/principal" class="boton-menu">Volver al menú</a>
+
+  <div class="cajita-partidas">
+    <h2>Mis Partidas</h2>
+
+    {{#if partidas.length}}
+      <ul class="lista-partidas">
+        {{#each partidas}}
+          <li class="partida">
+            <div class="info-partida">
+              <strong>Contra:</strong>
+              {{#if (eq ../usuarioId jugador1._id)}}
+                {{#if jugador2}} {{jugador2.Nombre}} {{else}} <em>Esperando rival</em> {{/if}}
+              {{else}}
+                {{#if jugador1}} {{jugador1.Nombre}} {{else}} <em>Esperando rival</em> {{/if}}
+              {{/if}}<br>
+              <strong>Resultado:</strong>
+              {{#if (eq resultado "en_curso")}}
+                En curso
+              {{else if (eq resultado "jugador1")}}
+                Ganaste
+              {{else if (eq resultado "jugador2")}}
+                Perdiste
+              {{else}}
+                Empate
+              {{/if}}<br>
+              <strong>Iniciada:</strong> {{fechaInicio}}<br>
+            </div>
+
+            {{#if (eq resultado "en_curso")}}
+              <a class="boton-link-entrar" href="/juego-local?partidaId={{_id}}">Entrar</a>
+            {{/if}}
+            <button class="boton-link-eliminar" onclick="eliminarPartida('{{_id}}')">❌ Eliminar</button>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p class="mensaje-vacio">No tienes partidas en curso.</p>
+    {{/if}}
+
+    <a class="boton-iniciar" href="/buscar">🎮 Iniciar nueva partida</a>
+  </div>
+
+  <script>
+    async function eliminarPartida(id) {
+      if (confirm('¿Estás seguro de que deseas eliminar esta partida?')) {
+        const res = await fetch('/eliminar-partida', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ partidaId: id })
+        });
+        const data = await res.json();
+        if (data.ok) {
+          location.reload();
+        } else {
+          alert('Error al eliminar la partida.');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

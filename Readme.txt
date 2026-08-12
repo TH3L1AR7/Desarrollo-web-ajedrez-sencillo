@@ -1,0 +1,8 @@
+Bienvenidos a la entrega 3 del grupo 21, a continuación se comentaran algunas dificultades, aspectos técnicos, entre otros de la entrega 3.
+
+La entrega 3 tiene como problemática principal el poder jugar en línea para ello se debe generar un enlace de invitación y al entregárselo a un usuario registrado en la página se pueda comenzar a jugar todo esto debe estar conectado a través de la base de datos mongoDB que se encargara de la gestión de usuarios y también de la sincronización en línea del tablero. Para poder jugar en linea será necesario la construcción de una API que se encarge de la lógica del tablero en tiempo real, mientras que mongoDB y en este caso optamos por la utilización de una librería llamada socket.IO la cual ayudaba en gran medida a la gestión del servidor en tiempo real, la API para la realización del tablero en lógica de en línea fue bastante compleja y nos costo bastante resolverlo, sin embargo, al final se pudo lograr y se logro tener una lógica en tiempo real para el tablero a través de una API no muy compleja que junto con socket.IO y mongoDB se encargan de cada 5 segundos estar enviando solicitudes y preguntándose el estado del tablero y el juego en general.
+
+Para la generación de un enlace único se utilizo de la librería uuid lo cual permite tener un enlace único y asi evitar duplicas.
+Algo importante a considerar es la seguridad de la página web y de los usuarios registrados es por ello que todas las contraseñas almacenadas en mongoDB se encuentran hasheadas.
+
+En general la entrega 3 para el grupo 21 resulto en un desafio complejo, sin embargo bastante enriquecidor para el aprendizaje y el mundo actual del desarrollo web.

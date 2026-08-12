@@ -1,0 +1,57 @@
+
+
+@media (width >= 1025px) and (width <= 1745px) {
+  #bando-negro{
+       top: 50%;
+    left: 20%;
+  }
+
+  #bando-blanco{
+       top: 50%;
+    left: 60%;
+  }
+
+    #titulo-bando {
+        position: absolute;
+        top: 15%;
+        left: 31%;
+    }
+
+}
+
+@media (width <= 1024px) {
+   #bando-negro{
+       top: 50%;
+    left: 20%;
+  }
+
+  #bando-blanco{
+       top: 50%;
+    left: 60%;
+  }
+
+    #titulo-bando {
+        position: absolute;
+        top: 15%;
+        left: 31%;
+    }
+}
+
+@media (width <= 800px) {
+   #bando-negro{
+       top: 60%;
+    left: 20%;
+  }
+
+  #bando-blanco{
+       top: 60%;
+    left: 60%;
+  }
+
+    #titulo-bando {
+        position: absolute;
+        top: 15%;
+        left: 31%;
+    }
+  
+}

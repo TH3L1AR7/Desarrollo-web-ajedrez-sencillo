@@ -1,0 +1,80 @@
+body {
+    font-family: Monaco, monospace;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    margin: 0;
+    background-image: url("/img/Fondo/images.jpeg");
+}
+
+.boton-centrado{
+    margin: auto;
+}
+
+#bando-negro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    font-size: 30px;
+    padding: 5px 20px;
+    background-color: black; 
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 180px;   
+    left: 600px; 
+    animation: fadeIn 1s ease-out;
+    border: 3px solid white;
+
+}
+
+
+#bando-blanco{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    font-size: 30px;
+    padding: 5px 20px;
+    background-color: white ; 
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 180px;   
+    left: 1000px; 
+    animation: fadeIn 1s ease-out;
+    border: 3px solid black;
+
+}
+
+#titulo-bando{
+    background-color: #f3ece0;
+    width: fit-content;
+    margin: auto;
+    height: fit-content;
+    margin-top: 25px;
+    border: 3px solid black;
+    border-radius: 20px;
+    color:black ;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

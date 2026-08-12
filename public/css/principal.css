@@ -1,0 +1,123 @@
+/* css de index, se me olvido cambiar el nombre */
+body {
+    font-family: Monaco, monospace;
+    background-image: url("/img/Fondo/images.jpeg");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 30%);
+    z-index: -1;
+}
+
+#informacion-principal {
+    background: whitesmoke;
+    color: black;
+    width: auto;
+    height: 100px;  
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 4px 4px 10px rgb(0 0 0 / 30%);
+    border: 3px solid black;
+    animation: fadeIn 1s ease-out;
+
+
+}
+
+#titulo {
+    font-size: 50px;
+    margin: 0;
+    
+}
+
+#cuadro-inferior {
+    width: 80%;
+    max-width: 700px;
+    background-color: #F5DEB3;
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 20%);
+    margin-top: 20px;
+    border: 3px solid black;
+    animation: fadeIn 2s ease-out;
+}
+
+#parrafo {
+    font-size: 20px;
+    color: black;
+
+}
+
+.boton-principal {
+    display: inline-block;
+    background-color: black;
+    width: 160px;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    color: white;
+    border-radius: 25px;
+    margin-top: 15px;
+    align-content: center;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    animation: arcoiris 2s  infinite;
+}
+
+.boton-principal:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes arcoiris {
+    0% { background-color: red; }
+    14% { background-color: orange; }
+    28% { background-color: yellow; }
+    42% { background-color: green; }
+    57% { background-color: blue; }
+    71% { background-color: indigo; }
+    85% { background-color: violet; }
+    100% { background-color: red; } 
+}
+
+#imagen-meme {
+    width: 300px;
+    border: 3px solid white;
+    border-radius: 10px;
+    animation: flotar 2s ease-in-out infinite;
+}
+
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

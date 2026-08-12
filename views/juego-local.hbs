@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/medialocal.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablero de Ajedrez - En línea</title>
+</head>
+<body>
+    <a href="/principal" class="boton-menu">Volver al menú</a>
+
+    <div class="ajedrez">
+        <!-- Panel izquierdo: Rendirse y capturas negras -->
+        <div class="panel-lateral panel-izquierdo">
+            <button id="rendirse2">Rendirse</button>
+            <div id="capturas-negras" class="capturas">
+                <h3>Capturas negras</h3>
+                <div class="contenedor-piezas" id="piezas-negras"></div>
+            </div>
+        </div>
+
+        <div class="caja-tablero-completo">
+            <button id="nueva-partida" class="boton-nueva-partida">Nueva Partida</button>
+            <div class="contenedor-tablero-completo">
+                <div class="coordenadas-superior">
+                    <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>
+                </div>
+                <div class="tablero-con-laterales">
+                    <div class="coordenadas-laterales">
+                        <span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
+                    </div>
+                    <div class="tablero"></div>
+                </div>
+                <div class="coordenadas-inferior">
+                    <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel derecho: Capturas blancas, turno, rendirse -->
+        <div class="panel-lateral panel-derecho">
+            <button id="rendirse">Rendirse</button>
+            <div id="capturas-blancas" class="capturas">
+                <h3 style="color: white;">Capturas blancas</h3>
+                <div class="contenedor-piezas" id="piezas-blancas"></div>
+            </div>
+            <p id="tu-turno">Turno: blanco</p>
+        </div>
+    </div>
+
+    <!-- Historial -->
+    <ul id="historial-lista"></ul>
+
+    <!-- Sockets y scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // Leer el ID de partida de la URL
+        const partidaId = new URLSearchParams(window.location.search).get('partidaId');
+        if (!partidaId) {
+            alert("No se encontró la partida. Redirigiendo...");
+            window.location.href = "/principal";
+        }
+    </script>
+    <script src="/js/TableroAjedrez.js"></script>
+    <script src="/js/DragAndDrop.js"></script>
+</body>
+</html>

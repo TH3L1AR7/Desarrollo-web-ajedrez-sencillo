@@ -1,0 +1,117 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f9;
+  background-image: url("/img/Fondo/images.jpeg");
+}
+
+.cajita-partidas {
+  max-width: 460px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  border: 2px solid #222;
+  border-radius: 12px;
+background: linear-gradient(120deg, rgb(158 146 132) 60%, rgb(43, 36, 21) 100%);  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.cajita-partidas h2 {
+  margin-bottom: 25px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 26px;
+}
+
+.lista-partidas {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.partida {
+  background-color: #fff9e5;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.mensaje-vacio {
+  font-size: 17px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.boton-iniciar {
+  display: block;
+  text-decoration: none;
+  background-color: #D2A679;
+  color: black;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 3px solid black;
+  transition: background-color 0.3s ease;
+}
+
+.boton-iniciar:hover {
+  background-color: white;
+}
+
+.boton-link-entrar,
+.boton-link-eliminar {
+  background: linear-gradient(95deg, #7D5A36 70%, #5B3A1B 100%);
+  color: #FAF3E7;
+  border: 3px solid #CFA55B;
+  border-radius: 20px;
+  padding: 0.7em 1.6em;
+  font-size: 1.15rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px #2d180940;
+  margin: 0.27em 0.13em;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  transition: background 0.16s, transform 0.13s, box-shadow 0.15s, color 0.12s;
+  position: relative;
+}
+
+
+.boton-link-entrar {
+    width: 116px;
+    height: 50px;
+    left: 25%;
+    font-size: 1.35rem;
+}
+
+.boton-link-eliminar {
+    width: 150px;
+    height: 80px;
+    left: 30%;
+    font-size: 1.07rem;
+}
+.boton-link-entrar:hover, .boton-link-entrar:focus,
+.boton-link-eliminar:hover, .boton-link-eliminar:focus {
+  background: linear-gradient(93deg, #A4845C 60%, #6B4923 100%);
+  color: #fff7e3;
+  box-shadow: 0 10px 25px #cfa55b66;
+  transform: translateY(-2px) scale(1.06);
+}
+.boton-link-entrar:active,
+.boton-link-eliminar:active {
+  background: #6b4923;
+  color: #F9E5C8;
+  box-shadow: 0 2px 6px #6c563a22;
+  transform: scale(0.96);
+}

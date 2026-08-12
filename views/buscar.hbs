@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/buscar.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Buscar</title>
+  <style>
+    .centrar-botones {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <a href="/principal" class="boton-menu">Volver al menú</a>
+
+  <div class="cajita-buscar">
+    <h2>Invita y juega</h2>
+
+    <div class="color-selector centrar-botones">
+      <label>Elige tu color:</label>
+      <select id="color" class="boton-link">
+        <option value="blancas">Blancas</option>
+        <option value="negras">Negras</option>
+      </select>
+      <button onclick="crearPartida()" class="boton-link">Crear partida</button>
+    </div>
+
+    <div id="resultadoBusqueda"></div>
+
+    <div id="enlacePartida" style="display:none;">
+      <p>¡Comparte el siguiente enlace con tu amigo para que se una a la partida!</p>
+      <p>
+        <a id="linkPartida" href="" target="_blank">Enlace para jugar (Jugador 2)</a>
+      </p>
+      <div class="centrar-botones">
+        <button id="entrarPartidaBtn" class="boton-link" type="button">Entrar a mi partida</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function crearPartida() {
+      const color = document.getElementById('color').value;
+
+      try {
+        const res = await fetch('/crear-partida', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ color })
+        });
+
+        const data = await res.json();
+        const contenedor = document.getElementById('resultadoBusqueda');
+        const enlacePartida = document.getElementById('enlacePartida');
+        const linkPartida = document.getElementById('linkPartida');
+        const btnEntrar = document.getElementById('entrarPartidaBtn');
+
+        if (res.ok && data.partidaId) {
+          const urlUnirse = `${window.location.origin}/unirse?partidaId=${data.partidaId}`;
+          enlacePartida.style.display = 'block';
+          linkPartida.href = urlUnirse;
+          linkPartida.textContent = urlUnirse;
+
+          // Botón para que el creador entre directo a su partida
+          btnEntrar.onclick = () => {
+            window.location.href = `/juego-local?partidaId=${data.partidaId}`;
+          };
+
+          contenedor.innerHTML = '<p style="color:green;">¡Partida creada con éxito!</p>';
+        } else {
+          contenedor.innerHTML = `<p style="color:red;">${data.error || 'Error al crear la partida'}</p>`;
+        }
+      } catch (err) {
+        document.getElementById('resultadoBusqueda').innerHTML =
+          `<p style="color:red;">${err.message}</p>`;
+      }
+    }
+  </script>
+</body>
+</html>

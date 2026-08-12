@@ -1,0 +1,91 @@
+body {
+    font-family: Monaco, monospace;
+    background-image: url("/img/Fondo/images.jpeg");
+    margin: 0;
+    padding: 0;
+    align-items: center;
+
+}
+
+.perfil {
+    background: #F5DEB3;
+    width: fit-content;
+    height: auto;
+    padding: 20px;
+    margin: 240px auto;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px #0000004d;
+    animation: fadeIn 1s ease-out;
+    border: 3px solid black;
+    position: center;
+    text-align: center;
+    font-size:170%;
+}
+
+.boton-menu, .boton-cerrar-sesion {
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    padding: 5px 20px;
+    background-color: #F5EADC; 
+    color: black;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    left: 1600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-menu {
+    top: 10px;
+}
+
+.boton-cerrar-sesion {
+    top: 100px;
+}
+
+.boton-menu:hover, .boton-cerrar-sesion:hover {
+    background-color: #806E56;
+}
+
+#cerrar-sesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    padding: 5px 20px;
+    background-color: #F5EADC; 
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 10px;   
+    left: 30px;  
+    animation: slideIn 2s ease-out;
+    border: 3px solid black;
+}
+
+#cerrar-sesion:hover {
+    background-color: white;
+}
+
+
+/* 🌐 Media Queries */
+@media (width <= 1400px) {
+    .perfil {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .boton-menu, .boton-cerrar-sesion {
+        left: 70%;
+        transform: translateX(-50%);
+    }
+
+}
+

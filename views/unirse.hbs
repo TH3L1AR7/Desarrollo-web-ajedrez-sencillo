@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unirse a Partida</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <a href="/principal" class="boton-menu">Volver al menú</a>
+
+  <div class="card">
+    <h3>Unirse a una Partida</h3>
+
+    <form id="unirseForm" method="POST" action="/unirse-partida">
+      <div class="form-group">
+        <label for="partidaId">ID de la Partida</label>
+        <input type="text" id="partidaId" name="partidaId" placeholder="Introduce el ID de la partida" required />
+      </div>
+      <button type="submit">Unirse</button>
+    </form>
+
+    <div id="mensaje"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('unirseForm');
+    const mensajeDiv = document.getElementById('mensaje');
+    const inputPartidaId = form.partidaId;
+
+    // Ver si el ID viene por la URL
+    const params = new URLSearchParams(window.location.search);
+    const partidaIdQuery = params.get('partidaId');
+
+    if (partidaIdQuery) {
+      // Oculta el formulario
+      form.style.display = 'none';
+
+      // Intenta unirse automáticamente
+      intentarUnirse(partidaIdQuery);
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const partidaId = inputPartidaId.value.trim();
+      if (!partidaId) return;
+      intentarUnirse(partidaId);
+    });
+
+    async function intentarUnirse(partidaId) {
+      try {
+        const res = await fetch('/unirse-partida', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ partidaId }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          mensajeDiv.textContent = '¡Te uniste a la partida correctamente!';
+          mensajeDiv.className = 'success';
+        } else {
+          mensajeDiv.textContent = data.error || 'Error al unirse a la partida.';
+          mensajeDiv.className = 'error';
+          form.style.display = 'block'; // Muestra el form si hubo error
+        }
+      } catch (error) {
+        mensajeDiv.textContent = 'Error de red o servidor.';
+        mensajeDiv.className = 'error';
+        form.style.display = 'block'; // Muestra el form si hubo error
+      }
+    }
+  </script>
+</body>
+</html>

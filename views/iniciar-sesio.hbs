@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styleregister.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Iniciar sesión</title>
+</head>
+<body>
+  <div>
+    <a href="/principal" class="boton-menu" id="menu-register">Atrás</a>
+  </div>
+  <form id="login-form">
+    <div class="inicio-sesion">
+      <input type="email" name="Correo" id="Correo" placeholder="Correo" required><br>
+      <input type="password" name="Contraseña" id="Contraseña" placeholder="Contraseña" required><br>
+      <input type="hidden" name="next" id="next" value="{{next}}">
+      <button id="iniciar-sesion" type="submit">Iniciar sesión</button>
+      <a href="/registrar-usuarios" id="Registarse-en-iniciosesion">Registrarse</a>
+    </div>
+  </form>
+  <div id="mensaje"></div>
+  <script src="/js/login.js"></script>
+</body>
+</html>

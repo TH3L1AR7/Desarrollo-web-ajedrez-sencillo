@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+  margin: 0;
+  background-image: url("/img/Fondo/images.jpeg");
+}
+
+.cajita-buscar {
+  width: 32%;
+  min-width: 300px;
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 32px 28px 25px 28px;
+  border-radius: 18px;
+  background: rgba(245,222,179,0.95);
+  box-shadow: 0 7px 30px rgba(140, 90, 19, 0.12);
+  border: none;
+  text-align: center;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: none;}
+}
+
+.cajita-buscar h2 {
+  margin-bottom: 24px;
+  color: #4b3215;
+  font-weight: 800;
+  font-size: 1.44rem;
+  letter-spacing: 1px;
+}
+
+#resultadoBusqueda {
+  margin-top: 16px;
+  font-size: 1.05em;
+  color: #84631e;
+  min-height: 22px;
+}
+
+.centrar-botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.boton-link, .boton-link:visited {
+  background: linear-gradient(94deg, #ffe5b4 60%, #ffc26b 100%);
+  color: #624311;
+  border: none;
+  border-radius: 20px;
+  padding: 0.7em 1.5em;
+  font-size: 1.08rem;
+  font-weight: 700;
+  box-shadow: 0 3.5px 12px #dfc49644;
+  margin: 0.23em 0.11em;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.18s, transform 0.13s, box-shadow 0.14s;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.04em;
+}
+.boton-link:hover, .boton-link:focus {
+  background: linear-gradient(93deg, #ffd391 45%, #ffbe50 100%);
+  color: #402c0d;
+  transform: translateY(-2px) scale(1.07);
+  box-shadow: 0 9px 22px #be995955;
+}
+.boton-link:focus {
+  box-shadow: 0 0 0 3px #ffe5b470, 0 9px 22px #be995955;
+  outline: none;
+}
+.boton-link:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 2px 7px #be995955;
+}
+
+/* Botón select con mismo estilo */
+select.boton-link {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0.5em 1.1em;
+  border-radius: 14px;
+  background: linear-gradient(95deg, #7D5A36 70%, #5B3A1B 100%);
+  font-weight: 600;
+  box-shadow: none;
+  border: 1.5px solid #efd39d;
+  color: white;
+  transition: border-color 0.2s;
+}
+
+/* Enlace de la partida */
+#enlacePartida p {
+  margin: 8px 0 2px 0;
+  font-size: 1.05em;
+  color: #7b633b;
+}
+#linkPartida {
+  display: inline-block;
+  word-break: break-all;
+  font-size: 1.09em;
+  background: #ffeccb;
+  border-radius: 10px;
+  padding: 5px 13px;
+  margin-bottom: 6px;
+  color: #634d27;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* Botón volver al menú (arriba a la izquierda) */
+.boton-menu {
+  background: #ffe0b1;
+  color: #69460b;
+  border-radius: 18px;
+  padding: 0.5em 1.4em;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #ebbc83;
+  box-shadow: 0 2px 10px #dfc49622;
+  position: absolute;
+  top: 28px;
+  left: 30px;
+  transition: background 0.16s, color 0.17s;
+}
+.boton-menu:hover, .boton-menu:focus {
+  background: #ffd082;
+  color: #3b290a;
+  border-color: #e8a750;
+}
+
+@media (max-width: 650px) {
+  .cajita-buscar { width: 96vw; min-width: 0; padding: 18px 6px; border-radius: 12px;}
+  .cajita-buscar h2 { font-size: 1.13rem; }
+  .boton-link { font-size: 0.98rem; padding: 0.5em 1.07em;}
+  .boton-menu { font-size: 0.95em; top: 14px; left: 10px; padding: 0.38em 0.9em;}
+}
