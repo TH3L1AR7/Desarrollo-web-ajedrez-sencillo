@@ -47,7 +47,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // -------------------------------
 // MONGODB
 // -------------------------------
-mongoose.connect('mongodb+srv://USER:PASSWORD@CLUSTER.mongodb.net/DB')
+mongoose.connect('mongodb+srv:')
   .then(() => console.log('✅ Conectado a MongoDB Atlas'))
   .catch(err  => console.error('❌ Error conectando a MongoDB:', err));
 
